@@ -43,17 +43,17 @@ public class DischargeDetailService {
 
 	private CostForSymptomResponse populateCostData(Collection<ResultSummary> result) {
 		CostForSymptomResponse response = new CostForSymptomResponse();
-		Integer totalCostOfMed = 0, totalCostOfTest = 0, totalHospitalTestCost = 0, totalHospitalMedCost = 0,
-				fraudCount = 0, hospitalCount = 0;
+		Long totalCostOfMed = 0L, totalCostOfTest = 0L, totalHospitalTestCost = 0L, totalHospitalMedCost = 0L,
+				fraudCount = 0L, hospitalCount = 0L;
 		Set<String> hospitalList = new HashSet<>();
 		for (ResultSummary resultSummary : result) {
 			totalCostOfMed = totalCostOfMed + Integer.valueOf(resultSummary.getCostOfMedicine());
 			totalCostOfTest = totalCostOfTest + Integer.valueOf(resultSummary.getCostOfTest());
-			totalHospitalTestCost = totalHospitalTestCost + Integer.valueOf(resultSummary.getAvgHospitalTestCharge());
-			totalHospitalMedCost = totalHospitalMedCost + Integer.valueOf(resultSummary.getAvgHospitalMedCharge());
+			totalHospitalTestCost = totalHospitalTestCost + resultSummary.getAvgHospitalTestCharge();
+			totalHospitalMedCost = totalHospitalMedCost + resultSummary.getAvgHospitalMedCharge();
 			if ((Integer.valueOf(resultSummary.getCostOfMedicine()) + Integer.valueOf(
-					resultSummary.getCostOfTest())) > (Integer.valueOf(resultSummary.getAvgHospitalTestCharge())
-							+ Integer.valueOf(resultSummary.getAvgHospitalMedCharge()))) {
+					resultSummary.getCostOfTest())) > (resultSummary.getAvgHospitalTestCharge()
+							+ resultSummary.getAvgHospitalMedCharge())) {
 				fraudCount++;
 			}
 			if (StringUtils.hasText(resultSummary.getHospitalName())
@@ -67,7 +67,7 @@ public class DischargeDetailService {
 		response.setTotalCostOfTest(totalCostOfTest);
 		response.setTotalHospitalMedCost(totalHospitalMedCost);
 		response.setTotalHospitalTestCost(totalHospitalTestCost);
-		response.setTotalRecordCount(result.size());
+		response.setTotalRecordCount(new Long(result.size()));
 		response.setTotalHospitalCount(hospitalCount);
 		return response;
 	}

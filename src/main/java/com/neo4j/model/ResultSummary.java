@@ -7,8 +7,8 @@ public class ResultSummary {
 
 	private String costOfMedicine;
 	private String costOfTest;
-	private String avgHospitalMedCharge;
-	private String avgHospitalTestCharge;
+	private Long avgHospitalMedCharge;
+	private Long avgHospitalTestCharge;
 	private String hospitalName;
 
 	public String getCostOfTest() {
@@ -19,19 +19,19 @@ public class ResultSummary {
 		this.costOfTest = costOfTest;
 	}
 
-	public String getAvgHospitalMedCharge() {
+	public Long getAvgHospitalMedCharge() {
 		return avgHospitalMedCharge;
 	}
 
-	public void setAvgHospitalMedCharge(String avgHospitalMedCharge) {
+	public void setAvgHospitalMedCharge(Long avgHospitalMedCharge) {
 		this.avgHospitalMedCharge = avgHospitalMedCharge;
 	}
 
-	public String getAvgHospitalTestCharge() {
+	public Long getAvgHospitalTestCharge() {
 		return avgHospitalTestCharge;
 	}
 
-	public void setAvgHospitalTestCharge(String avgHospitalTestCharge) {
+	public void setAvgHospitalTestCharge(Long avgHospitalTestCharge) {
 		this.avgHospitalTestCharge = avgHospitalTestCharge;
 	}
 
