@@ -4,60 +4,60 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CostForSymptomResponse {
-	private Integer totalCostOfMed;
-	private Integer totalCostOfTest;
-	private Integer totalHospitalTestCost;
-	private Integer totalHospitalMedCost;
-	private Integer fraudCount;
-	private Integer totalRecordCount;
+	private Long totalCostOfMed;
+	private Long totalCostOfTest;
+	private Long totalHospitalTestCost;
+	private Long totalHospitalMedCost;
+	private Long fraudCount;
+	private Long totalRecordCount;
 	private String message;
-	private Integer totalHospitalCount;
+	private Long totalHospitalCount;
 
-	public Integer getTotalCostOfMed() {
+	public Long getTotalCostOfMed() {
 		return totalCostOfMed;
 	}
 
-	public void setTotalCostOfMed(Integer totalCostOfMed) {
+	public void setTotalCostOfMed(Long totalCostOfMed) {
 		this.totalCostOfMed = totalCostOfMed;
 	}
 
-	public Integer getTotalCostOfTest() {
+	public Long getTotalCostOfTest() {
 		return totalCostOfTest;
 	}
 
-	public void setTotalCostOfTest(Integer totalCostOfTest) {
+	public void setTotalCostOfTest(Long totalCostOfTest) {
 		this.totalCostOfTest = totalCostOfTest;
 	}
 
-	public Integer getTotalHospitalTestCost() {
+	public Long getTotalHospitalTestCost() {
 		return totalHospitalTestCost;
 	}
 
-	public void setTotalHospitalTestCost(Integer totalHospitalTestCost) {
+	public void setTotalHospitalTestCost(Long totalHospitalTestCost) {
 		this.totalHospitalTestCost = totalHospitalTestCost;
 	}
 
-	public Integer getTotalHospitalMedCost() {
+	public Long getTotalHospitalMedCost() {
 		return totalHospitalMedCost;
 	}
 
-	public void setTotalHospitalMedCost(Integer totalHospitalMedCost) {
+	public void setTotalHospitalMedCost(Long totalHospitalMedCost) {
 		this.totalHospitalMedCost = totalHospitalMedCost;
 	}
 
-	public Integer getFraudCount() {
+	public Long getFraudCount() {
 		return fraudCount;
 	}
 
-	public void setFraudCount(Integer fraudCount) {
+	public void setFraudCount(Long fraudCount) {
 		this.fraudCount = fraudCount;
 	}
 
-	public Integer getTotalRecordCount() {
+	public Long getTotalRecordCount() {
 		return totalRecordCount;
 	}
 
-	public void setTotalRecordCount(Integer totalRecordCount) {
+	public void setTotalRecordCount(Long totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
 	}
 
@@ -69,11 +69,11 @@ public class CostForSymptomResponse {
 		this.message = message;
 	}
 
-	public Integer getTotalHospitalCount() {
+	public Long getTotalHospitalCount() {
 		return totalHospitalCount;
 	}
 
-	public void setTotalHospitalCount(Integer totalHospitalCount) {
+	public void setTotalHospitalCount(Long totalHospitalCount) {
 		this.totalHospitalCount = totalHospitalCount;
 	}
 
@@ -84,4 +84,5 @@ public class CostForSymptomResponse {
 				+ ", fraudCount=" + fraudCount + ", totalRecordCount=" + totalRecordCount + ", message=" + message
 				+ ", totalHospitalCount=" + totalHospitalCount + "]";
 	}
+
 }
